@@ -1,0 +1,58 @@
+----------------------------------------------------------------------------
+INTRODUCTION
+----------------------------------------------------------------------------
+
+This code implements the simulation results reported in:
+
+     M. W. Spratling, Fitting Predictive Coding to the Neurophysiological Data
+
+Please cite this paper if this code is used in, or to motivate, any publications. 
+
+----------------------------------------------------------------------------
+USAGE
+----------------------------------------------------------------------------
+
+This code was tested with MATLAB Version 9.5.0.944444 (R2018b) running on Ubuntu
+Linux version 16.04. It also runs using GNU Octave Version 4.0.0.
+
+To re-run the experiments described in the paper, do the following.
+
+Fig. 3b and c can be reproduced using the command:
+
+    keller_fit;
+
+    This produces three figures. The first reproduces the fit to the data
+    proposed by Zmarz and Keller (2016) see their Fig 4D. The 2nd and 3rd images
+    correspond to Fig. 3b and 3c in the current paper.
+
+Fig. 3d can be reproduced using the command:
+
+    stability;
+
+    This produces two figures. The first is Fig 3d which shows the difference in
+    response between the prediction neuron representing the cause underlying the
+    input and the next most active prediction neuron. The second shows the same
+    results, but when plotting the ratio between the response of the prediction
+    neuron representing the cause underlying the input and the sum of all the
+    prediction neuron responses.
+
+    Results for other versions of the Rao and Ballard algorithm (see footnote
+    "a") can be obtained by editing randb_pc_activation.m to replace the method
+    of calculating "dy" by one of the other three versions that are currently
+    commented out.
+
+Fig. 3e can be reproduced using the command:
+
+    multisensory_integration_log('randb');
+
+    The first 6 images show the activities of the error and prediction neurons
+    to different combinations of running speed (p) and visual flow (v). Image 11
+    corresponds to Fig. 3e.
+    
+Fig. 3f can be reproduced using the command:
+       
+    multisensory_integration_log('DIM');
+
+    The first 6 images show the activities of the error and prediction neurons
+    to different combinations of running speed (p) and visual flow (v). Image 11
+    corresponds to Fig. 3f.
